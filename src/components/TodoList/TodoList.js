@@ -14,9 +14,11 @@ const TodoList = () => {
 const styles = {
     container: {
         display: "flex",
-        // justifyContent: "center",
         backgroundColor: "yellow",
-        flexDirection: "column"
+        flexDirection: "column",
+        alignItems: "center",
+        width: "80%",
+        backgroundColor: "#BADFF1"
     }
 }
 
