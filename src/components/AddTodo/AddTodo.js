@@ -1,5 +1,8 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import PhotoCamera from '@material-ui/icons/PhotoCamera';
 
 const AddTodo = () => {
     return (
@@ -13,7 +16,14 @@ const AddTodo = () => {
                 shrink: true,
             }}
             />
-            <button>Add</button>
+            <div>
+                <Button variant="contained" style={styles.btnAdd} component="span">
+                    Add
+                </Button>
+                <IconButton style={styles.icon} aria-label="upload picture" component="span">
+                    <PhotoCamera />
+                </IconButton>
+            </div>
         </div>
     );
 };
@@ -23,6 +33,10 @@ const styles = {
         display: "flex",
         flexDirection: "column",
         width: "80%"
+    },
+    btnAdd: {
+        backgroundColor: "#ffffff",
+        textTransform: "capitalize"
     }
 }
 
