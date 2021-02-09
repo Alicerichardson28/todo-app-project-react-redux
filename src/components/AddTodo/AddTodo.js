@@ -16,7 +16,7 @@ const AddTodo = () => {
                 shrink: true,
             }}
             />
-            <div>
+            <div style={styles.containerBtn}>
                 <Button variant="contained" style={styles.btnAdd} component="span">
                     Add
                 </Button>
@@ -32,9 +32,17 @@ const styles = {
     container: {
         display: "flex",
         flexDirection: "column",
-        width: "80%"
+        justifyContent: "flex-end",
+        width: "70%"
+    },
+    containerBtn:{
+        display: "flex",
+        justifyContent: "flex-end",
+        alignItems: "center"
     },
     btnAdd: {
+        width: "50px",
+        height: "35px",
         backgroundColor: "#ffffff",
         textTransform: "capitalize"
     }
