@@ -1,13 +1,15 @@
-import React from 'react';
+import React, { useState} from 'react';
 import AddTodo from '../AddTodo';
 import DisplayTodos from '../DisplayTodos';
 
 
 const TodoList = () => {
+
+    const [todoList, setTodoList ] = useState([])
     return (
         <div style={styles.container}>
-            <AddTodo/>
-            <DisplayTodos/>
+            <AddTodo todoList={todoList} setTodoList={setTodoList}/>
+            <DisplayTodos todoList={todoList}/>
         </div>
     );
 };

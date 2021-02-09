@@ -2,12 +2,12 @@ import React from 'react';
 import { IoMdTrash, IoMdCreate } from "react-icons/io";
 
 
-const Todo = ({todoList}) => {
+const Todo = ({todo}) => {
     return (
         <div style={styles.container}>
             <div style={styles.todoList}>
                 <input style={styles.checkbox} type="checkbox"></input>
-                {todoList}
+                {todo}
                 <div>
                     <IoMdCreate size='24px'/>
                     <IoMdTrash size='24px'/>    

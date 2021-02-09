@@ -1,7 +1,7 @@
 import React from 'react';
 import Todo from './Todo'
 
-const DisplayTodos = () => {
+const DisplayTodos = ({todoList}) => {
     const todos = [
         "make dinner",
         "Trade stock",
@@ -9,8 +9,8 @@ const DisplayTodos = () => {
     ]
     return (
         <div style={styles.container}>
-            {todos.map(todoList => 
-                <Todo todoList={todoList}/>
+            {todoList.map(todo => 
+                <Todo todo={todo}/>
             )}
         </div>
     );
