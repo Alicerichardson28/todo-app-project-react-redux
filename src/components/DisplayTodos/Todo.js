@@ -41,7 +41,7 @@ const styles = {
     todoList: {
         display: "flex",
         justifyContent: "space-between",
-        marginLeft: "220px",
+        marginLeft: "130px",
         marginBottom: "10px",
         width: "60%"
     },

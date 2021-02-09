@@ -18,7 +18,7 @@ const styles = {
         backgroundColor: "yellow",
         flexDirection: "column",
         alignItems: "center",
-        width: "80%",
+        width: "50%",
         backgroundColor: "#BADFF1"
     }
 }
