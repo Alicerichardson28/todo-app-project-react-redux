@@ -4,18 +4,24 @@ import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import { Input } from '@material-ui/core';
+import CSS from 'csstype';
 
-const AddTodo = ({todoList, setTodoList}) => {
-    const [textTodo, setTextTodo] = useState('')
 
-    const handleSubmit = e => {
+interface Props {
+    todoList: string[];
+    setTodoList: React.Dispatch<React.SetStateAction<string[]>>
+}
+const AddTodo: React.FC<Props> = ({todoList, setTodoList}) => {
+    const [textTodo, setTextTodo] = useState<string>('')
+
+    const handleSubmit = (e: React.MouseEvent) => {
         e.preventDefault();
         setTodoList([...todoList,textTodo])
         // ["make dinner", "make pizza"]
         // ...,["make dinner"]
     }
 
-    const handleChange = e => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         console.log(e.target, "handleChange")
         setTextTodo(e.target.value) 
     }
@@ -27,14 +33,14 @@ const AddTodo = ({todoList, setTodoList}) => {
                 <Input
                     type="text"
                     value={textTodo}
-                    onChange={(e) => handleChange(e)}
+                    onChange={handleChange}
                     id="standard-full-width"
                     placeholder="Add your task here"
                     fullWidth
                 />
                 <div style={styles.containerBtn}>
-                    <button onClick={(e) => handleSubmit(e)}>Add</button>
-                    <IconButton style={styles.icon} aria-label="upload picture" component="span">
+                    <button onClick={handleSubmit}>Add</button>
+                    <IconButton aria-label="upload picture" component="span">
                         <PhotoCamera />
                     </IconButton>
                 </div>
@@ -43,7 +49,13 @@ const AddTodo = ({todoList, setTodoList}) => {
     );
 };
 
-const styles = {
+
+
+const styles: {
+    container: CSS.Properties;
+    containerBtn: CSS.Properties;
+    btnAdd: CSS.Properties;
+} = {
     container: {
         display: "flex",
         flexDirection: "column",
